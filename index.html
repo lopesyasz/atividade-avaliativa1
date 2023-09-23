@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Botão com alerta</title>
+</head>
+<body>
+	<button onclick="showAlert()">Clique aqui</button>
+
+	<script>
+		function showAlert() {
+			var options = ["Imprimir números de 1 a 10", "Imprimir os números ímpares menores que 100", "Imprimir a tabuada do número 8", "Imprimir todas as tabuadas do número 1 ao 10"];
+			var message = "Escolha na lista o que você quer que se faça:\n\n";
+			for (var i = 0; i < options.length; i++) {
+				message += (i + 1) + " - " + options[i] + "\n";
+			}
+			var choice = prompt(message);
+			switch (choice) {
+				case "1":
+					printNumbers();
+					break;
+				case "2":
+					printOddNumbers();
+					break;
+				case "3":
+					printMultiplicationTable();
+					break;
+				case "4":
+					printAllMultiplicationTables();
+					break;
+				default:
+					alert("Opção inválida!");
+			}
+		}
+     function printNumbers() {
+			var message = "";
+			for (var i = 1; i <= 10; i++) {
+				message += i + "\n";
+			}
+			alert(message);
+		}
+
+		function printOddNumbers() {
+			var message = "";
+			for (var i = 1; i < 100; i += 2) {
+				message += i + "\n";
+			}
+			alert(message);
+		}
+
+		function printMultiplicationTable() {
+			var message = "";
+			for (var i = 1; i <= 10; i++) {
+				message += "8 x " + i + " = " + (8 * i) + "\n";
+			}
+			alert(message);
+		}
+
+		function printAllMultiplicationTables() {
+			var message = "";
+			for (var i = 1; i <= 10; i++) {
+				message += "Tabuada do " + i + "\n\n";
+				for (var j = 1; j <= 10; j++) {
+					message += i + " x " + j + " = " + (i * j) + "\n";
+				}
+				message += "\n";
+			}
+			alert(message);
+		}
+	</script>
+</body>
+</html>
+
